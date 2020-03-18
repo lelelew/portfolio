@@ -1,204 +1,121 @@
+import React from "react";
 import Head from "next/head";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-const Home = () => (
-  <div className="container">
-    <Head>
-      <title>Lele Lew</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+const useStyles = makeStyles({
+  hero: {
+    backgroundColor: "black",
 
-    <main>
-      <div className="hero">Hi, I'm Lele Lew.</div>
-      {/* <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
 
-      <p className="description">
-        Get started by editing <code>pages/index.js</code>
-      </p>
+    height: "100vh",
+    width: "100vw"
+  },
+  heroText: {
+    color: "white"
+  },
+  navBar: {
+    position: "sticky",
+    top: "0px"
+  },
+  codeExampleContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center"
+  },
+  codeExampleOne: {
+    width: "60vw"
+  },
+  codeExampleOneDetails: {}
+});
 
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+const Home = props => {
+  const classes = useStyles(props);
+  const codeString = `const setHeight = _throttle(
+    height => {
+      _setHeight(Math.min(height, MAX_DRAWER_HEIGHT));
+    },
+    10,
+    { leading: true, trailing: true }
+  );
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+  /**
+   * Triggers a fake "friction point" X seconds after page load
+   * if the user hasn't interacted at all yet.
+   * Remove for production code.
+   */
+  useEffect(() => {
+    if (peekTimeoutId) {
+      clearTimeout(peekTimeoutId);
+    }
+    if (!hasPeeked && height === INITIAL_HEIGHT) {
+      peekTimeoutId = setTimeout(() => {
+        setHeight(MID_DRAWER_HEIGHT);
+        setHasPeeked(true);
+      }, 1000 * 30 /* 10 seconds */);
+    }
+  }, [hasPeeked]);
+`;
 
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Lele Lew</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div className={classes.hero}>
+        <div className={classes.heroText}>
+          <h1>Hi, I'm Lele Lew.</h1>
+        </div>
+      </div>
+
+      <div className={classes.navBar}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            {/* <Typography variant="h6" className={classes.title}>
+              News
+            </Typography> */}
+          </Toolbar>
+        </AppBar>
+      </div>
+      <div className={classes.codeExampleContainer}>
+        <SyntaxHighlighter
+          className={classes.codeExampleOne}
+          language="javascript"
+          showLineNumbers={true}
+          style={atomDark}
         >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
+          {codeString}
+        </SyntaxHighlighter>
+        <div className={classes.codeExampleOneDetails}>
+          Details about code here
+        </div>
+      </div>
 
-        <a
-          href="https://zeit.co/new?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
-      </div> */}
-    </main>
-
-    <footer>
-      {/* <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a> */}
-    </footer>
-
-    <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .title a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
-        text-decoration: underline;
-      }
-
-      .title {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
-      }
-
-      .title,
-      .description {
-        text-align: center;
-      }
-
-      .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-      }
-
-      code {
-        background: #fafafa;
-        border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-      }
-
-      .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-      }
-
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
-
-      .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
-        }
-      }
-    `}</style>
-
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
-  </div>
-);
+      <footer></footer>
+    </React.Fragment>
+  );
+};
 
 export default Home;
