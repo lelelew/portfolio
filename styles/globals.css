@@ -9,6 +9,19 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(251, 35, 110, 0.2) 70%
+  );
+}
+
+a:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(251, 35, 110, 0.4) 70%
+  );
 }
 
 * {
