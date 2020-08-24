@@ -1,0 +1,15 @@
+.root {
+  min-height: 20vh;
+  background-image: url(/lily-corner.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.root small {
+  color: rgba(0, 0, 0, 0.73);
+}
