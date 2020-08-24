@@ -1,0 +1,32 @@
+.root {
+  margin-top: 10vh;
+  padding: 5vh 5vw;
+  text-align: center;
+}
+
+.root h5 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.examples {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.example {
+  margin: 1rem;
+  padding: 3rem 3rem;
+  border-radius: 0.2rem;
+  background: rgba(251, 35, 110, 0.03);
+}
+
+.title {
+  color: rgba(251, 35, 110, 0.7);
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.73);
+}

@@ -2,6 +2,7 @@ import classes from "./Developer.module.css";
 import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
 import { MobileWidget } from "./MobileWidget";
+import { Volunteer } from "./Volunteer";
 
 export function Developer() {
   const [ref, inView, entry] = useInView({
@@ -12,6 +13,7 @@ export function Developer() {
     <div className={clsx(classes.root, inView && classes.in)} ref={ref}>
       <h1 className={classes.title}>Development.</h1>
       <MobileWidget />
+      <Volunteer />
     </div>
   );
 }
