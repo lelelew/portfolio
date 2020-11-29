@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 export function Business() {
   const [ref, inView, entry] = useInView({
     threshold: 0.25,
+    triggerOnce: true
   });
 
   return (

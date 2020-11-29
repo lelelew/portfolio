@@ -7,11 +7,12 @@ import { Volunteer } from "./Volunteer";
 export function Developer() {
   const [ref, inView, entry] = useInView({
     threshold: 0.25,
+    triggerOnce: true
   });
 
   return (
     <div className={clsx(classes.root, inView && classes.in)} ref={ref}>
-      <h1 className={classes.title}>Development.</h1>
+      <h1 className={classes.title}>Projects</h1>
       <MobileWidget />
       <Volunteer />
     </div>

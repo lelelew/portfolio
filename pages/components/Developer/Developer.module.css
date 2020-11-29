@@ -10,8 +10,9 @@
 
 .title {
   margin-bottom: 10vh;
-  display: inline-block;
-  font-size: 4rem;
+  /* display: inline-block; */
+  font-size: 2rem;
+  text-align: center;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
