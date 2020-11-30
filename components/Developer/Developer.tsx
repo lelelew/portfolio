@@ -7,7 +7,7 @@ import { Airtable } from "./Airtable";
 
 export function Developer() {
   const [ref, inView, entry] = useInView({
-    threshold: 0.1,
+    threshold: 0.05,
     triggerOnce: true
   });
 
