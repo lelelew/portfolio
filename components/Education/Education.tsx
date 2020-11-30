@@ -22,7 +22,7 @@ export function Education() {
           <strong>Courses &amp; organizations I'm particularly grateful to have learned from:</strong>
           <ul>
             <li>
-              <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a>, Percy is an inspiration
+              <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a>, Quincy is an inspiration
               </li>
             <li>
               <a href="https://www.womenwhocode.com/sf" target="_blank">Women Who Code</a>, the community is amazing
