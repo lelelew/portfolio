@@ -1,0 +1,30 @@
+.root {
+  margin-top: 10vh;
+  padding: 5vh 5vw;
+  text-align: center;
+}
+
+.root h5 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+.example {
+  padding: 1.5rem 1.5rem;
+  border-radius: 0.2rem;
+  background: rgba(251, 35, 110, 0.03);
+}
+
+.title {
+  color: rgba(251, 35, 110, 0.7);
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.73);
+}

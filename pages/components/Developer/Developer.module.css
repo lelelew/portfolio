@@ -1,0 +1,28 @@
+.root {
+  padding: 0 5vw 5vh 5vw;
+  margin-top: -50px;
+  opacity: 0;
+  transition: opacity 750ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.in {
+  opacity: 1;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #7928ca, rgba(251, 35, 110));
+}
+
+.line {
+  background: linear-gradient(#ffffff, rgba(251, 35, 110), #7928ca);
+  width: 2px;
+  height: 4rem;
+  margin: 0 auto;
+}
