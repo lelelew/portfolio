@@ -20,12 +20,12 @@
 }
 
 .left img {
-  height: 50%;
-  /* max-width: 80%; */
+  height: 50vh;
+  /* max-width: 40vw; */
 }
 
 .right {
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +36,7 @@
 
 @media (min-width: 950px) {
   .right {
+    padding: 1rem;
     align-items: flex-start;
     text-align: left;
   }
