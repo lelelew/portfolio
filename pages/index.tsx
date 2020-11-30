@@ -1,10 +1,10 @@
 import Head from "next/head";
-import styles from "./Home.module.css";
-import { AboveTheFold } from "./components/AboveTheFold";
-import { Developer } from "./components/Developer/Developer";
-import { Business } from "./components/Business/Business";
-import { Education } from "./components/Education/Education";
-import { Footer } from "./components/Footer";
+import styles from "../styles/Home.module.css";
+import { AboveTheFold } from "../components/AboveTheFold";
+import { Developer } from "../components/Developer/Developer";
+import { Business } from "../components/Business/Business";
+import { Education } from "../components/Education/Education";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
